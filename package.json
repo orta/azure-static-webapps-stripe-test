@@ -2,7 +2,8 @@
   "private": true,
   "name": "root",
   "workspaces": [
-    "site"
+    "site",
+    "api"
   ],
   "engines": {
     "node": ">=13"
