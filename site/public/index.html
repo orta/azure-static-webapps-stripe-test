@@ -61,7 +61,7 @@
                 />
               </div>
             </div>
-            <button id="pro-btn">$14.00 per month</button>
+            <button id="pro-btn">$100 a year</button>
           </section>
         </div>
         <div id="error-message"></div>
@@ -74,8 +74,8 @@
 	// Replace with the domain you want your users to be redirected back to after payment
 	var DOMAIN = window.location.origin;
 	// Replace with a SKU for your own product (created either in the Stripe Dashboard or with the API)
-	var SUBSCRIPTION_BASIC_PRICE_ID = "price_1HRzAAGYezCHKuAaC1mcfBad";
-	var SUBSCRIPTION_PRO_PRICE_ID = "price_1HRzA9GYezCHKuAaLoZrOE53";
+	var SUBSCRIPTION_BASIC_PRICE_ID = "price_1HRzA9GYezCHKuAaLoZrOE53";
+	var SUBSCRIPTION_PRO_PRICE_ID = "price_1HRzAAGYezCHKuAaC1mcfBad";
 
 	var stripe = Stripe(PUBLISHABLE_KEY);
 
@@ -94,8 +94,8 @@
 			.redirectToCheckout({
 				lineItems: [{ price: priceId, quantity: 1 }],
 				successUrl:
-					DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
-				cancelUrl: DOMAIN + "/canceled.html",
+					DOMAIN + "/?state=success&session_id={CHECKOUT_SESSION_ID}",
+				cancelUrl: DOMAIN + "/?state=cancelled",
 				mode: 'subscription',
 			})
 			.then(handleResult);
