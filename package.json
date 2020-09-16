@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "root",
+  "workspaces": [
+    "site"
+  ],
+  "engines": {
+    "node": ">=13"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  },
+  "scripts": {
+  },
+  "dependencies": {
+    "@types/express": "^4.17.6",
+    "serve-handler": "^6.1.2"
+  }
+}
