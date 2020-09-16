@@ -1,0 +1,1 @@
+# azure-static-webapps-stripe-test
